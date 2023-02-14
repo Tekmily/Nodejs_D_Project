@@ -6,11 +6,14 @@ const bodyParser =require("body-parser");
 
 
 
+
 const app = express();
+
 
 app.use(bodyParser.json());
 mongoose.connect(
-    `mongodb+srv://${process.env.USERNAME}:${process.env.PASSWORD}@cluster0.xnfsv.mongodb.net/${process.env.DATABASE_NAME}?retryWrites=true&w=majority`,
+    "mongodb+srv://ogrenciPanel:oEH6FWmFKhbtejfn@cluster0.onfakyl.mongodb.net/?retryWrites=true&w=majority",
+
     (e) => {
       if (e) {
         console.log(e);
@@ -22,8 +25,6 @@ mongoose.connect(
 
 app.use("/ogrenci",ogrenciRouter);
 
-const port = process.env.PORT || 5000;
-
-app.listen(port, () => {
-  console.log(`Server started on port ${port}`);
+app.listen(5000, () => {
+  console.log(`Server started on port 5000`);
 });

@@ -2,6 +2,7 @@ const express = require("express");
 const Ogrenci = require("../models/Ogrenci");
 
 const router=express.Router();
+console.log("ogrenci sayfasındasınız test");
 
 router.get("/", (req, res) => {
     Ogrenci.find()
@@ -26,6 +27,7 @@ router.get("/", (req, res) => {
     const ogrenci = new Ogrenci({
       name: req.body.name,
       class: req.body.class,
+      school: req.body.school,
       description: req.body.description,
       user: req.userId,
     });
@@ -37,6 +39,7 @@ router.get("/", (req, res) => {
     Ogrenci.findByIdAndUpdate(req.params.id, {
       name: req.body.name,
       class: req.body.class,
+      school: req.body.school,
       description: req.body.description,
     })
       .then((ogrenci) => {
