@@ -4,11 +4,7 @@ const mongoose = require("mongoose");
 require("dotenv/config");
 const bodyParser =require("body-parser");
 
-
-
-
 const app = express();
-
 
 app.use(bodyParser.json());
 mongoose.connect(
